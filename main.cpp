@@ -19,7 +19,12 @@ static void display()
     terrain_polygon(xterrain,yterrain);
     t_left.tankDisplay();
     t_right.tankDisplay();
+     glColor3d(1,1,1);
+            output4(-.88, 0.7, scoreA);
+    glColor3d(1,1,1);
+            output5(0.88, 0.7, scoreB);
     projectileFunc();
+
 }
 
 void mouse(int button, int state, int x, int y)

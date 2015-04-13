@@ -4,7 +4,15 @@
 #include<math.h>
 #include"tanks.h"
 #include <ctype.h>
+#include<string.h>
+#include<string>
+#include<sstream>
 
+using namespace std;
+
+float score1=0,score2=0;
+char *scoreA=NULL,*scoreB=NULL;
+int score11,score22;
 float angle,power;
 tank t_left1(4), t_right1(17);
 float rangle;
@@ -19,6 +27,36 @@ float mouse_x[1]= {0}, mouse_y[1]= {0};//Start point of projectile
 float end_x, end_y;
 
 bool player=1; //true for player on left
+
+//void *font = GLUT_BITMAP_TIMES_ROMAN_24;
+/*void *fonts[] =
+{
+    GLUT_BITMAP_9_BY_15,
+    //GLUT_BITMAP_TIMES_ROMAN_10,
+    GLUT_BITMAP_TIMES_ROMAN_24
+};*/
+
+/*void
+selectFont(int newfont)
+{
+    font = fonts[newfont];
+    glutPostRedisplay();
+}*/
+
+
+//void *font = GLUT_BITMAP_TIMES_ROMAN_24;
+
+/*void output(float x, float y, char *string)
+{
+    int len, i;
+
+    glRasterPos2f(x, y);
+    len = (int) strlen(string);
+    for (i = 0; i < len; i++)
+    {
+        glutBitmapCharacter(font, string[i]);
+    }
+}*/
 
 float score(float xprojfin,float yprojfin)
 {
@@ -120,8 +158,38 @@ void projectileFunc()
         end_x=x_proj+mouse_x[0];
         end_y=ymin;
         k2=0;
-        std::cout<<end_x<<" , "<<end_y<<std::endl;
-        std::cout<<"score is "<<score(end_x,end_y)<<std::endl;
+        //std::cout<<end_x<<" , "<<end_y<<std::endl;
+        //std::cout<<"score is "<<score(end_x,end_y)<<std::endl;
+        if (player)
+        {
+            score1+=score(end_x,end_y);
+            //std::cout<<"score is "<<score1<<std::endl;
+            score11=(int)score1;
+            stringstream str1;
+            str1<<score11;
+            string temp_str=str1.str();
+            scoreA=(char*)temp_str.c_str();
+            std::cout<<"score is "<<scoreA<<std::endl;
+            //glColor3d(1,1,1);
+          //  output4(-.88, 0.7, scoreA);
+
+        }
+
+        else
+        {
+            score2+=score(end_x,end_y);
+
+            score22=(int)score2;
+            stringstream str2;
+            str2<<score22;
+            string temp_str=str2.str();
+            scoreB=(char*)temp_str.c_str();
+            std::cout<<"score is "<<scoreB<<std::endl;
+           // glColor3d(1,1,1);
+           // output5(0.88, 0.7, scoreB);
+
+
+        }
         glClearColor(0,0,0,1);
         glClear(GL_COLOR_BUFFER_BIT);
         glutPostRedisplay();

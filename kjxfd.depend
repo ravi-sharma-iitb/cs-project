@@ -469,3 +469,63 @@
 1428353027 c:\users\ravi sharma\desktop\7 april\tanks.h
 	"projectile.h"
 
+1428560350 source:c:\users\microsoft\desktop\9 april\7 april\main.cpp
+	<windows.h>
+	<GLUT/glut.h>
+	<stdlib.h>
+	<time.h>
+	"fin.h"
+	"projectile.h"
+	"tanks.h"
+
+1428564440 c:\users\microsoft\desktop\9 april\7 april\fin.h
+	<iostream>
+	<conio.h>
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdlib.h>
+	<time.h>
+
+1428564440 c:\users\microsoft\desktop\9 april\7 april\projectile.h
+	"fin.h"
+	<math.h>
+	"tanks.h"
+	<ctype.h>
+	<string.h>
+	<string>
+	<sstream>
+
+1428353027 c:\users\microsoft\desktop\9 april\7 april\tanks.h
+	"projectile.h"
+
+1428564915 source:c:\users\microsoft\desktop\9 april-2\7 april\main.cpp
+	<windows.h>
+	<GLUT/glut.h>
+	<stdlib.h>
+	<time.h>
+	"fin.h"
+	"projectile.h"
+	"tanks.h"
+
+1428564440 c:\users\microsoft\desktop\9 april-2\7 april\fin.h
+	<iostream>
+	<conio.h>
+	<windows.h>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdlib.h>
+	<time.h>
+
+1428564915 c:\users\microsoft\desktop\9 april-2\7 april\projectile.h
+	"fin.h"
+	<math.h>
+	"tanks.h"
+	<ctype.h>
+	<string.h>
+	<string>
+	<sstream>
+
+1428353027 c:\users\microsoft\desktop\9 april-2\7 april\tanks.h
+	"projectile.h"
+

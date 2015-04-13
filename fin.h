@@ -19,7 +19,7 @@ bool InitTerrain=1;
 void *font = GLUT_BITMAP_TIMES_ROMAN_24;
 void *fonts[] =
 {
-    //GLUT_BITMAP_9_BY_15,
+    GLUT_BITMAP_9_BY_15,
     //GLUT_BITMAP_TIMES_ROMAN_10,
     GLUT_BITMAP_TIMES_ROMAN_24
 };
@@ -44,11 +44,47 @@ void output(float x, float y, char *string)
     {
         glutBitmapCharacter(font, string[i]);
     }
-
+}
 void output2(float x, float y, char *string)
 {
     int len, i;
+    selectFont(0);
+    glRasterPos2f(x, y);
+    len = (int) strlen(string);
+    for (i = 0; i < len; i++)
+    {
+        glutBitmapCharacter(font, string[i]);
+    }
+}
 
+void output3(float x, float y, char *string)
+{
+    int len, i;
+
+    glRasterPos2f(x, y);
+    len = (int) strlen(string);
+    for (i = 0; i < len; i++)
+    {
+        glutBitmapCharacter(font, string[i]);
+    }
+}
+
+void output4(float x, float y, char *string)
+{
+    int len, i;
+    selectFont(0);
+    glRasterPos2f(x, y);
+    len = (int) strlen(string);
+    for (i = 0; i < len; i++)
+    {
+        glutBitmapCharacter(font, string[i]);
+    }
+}
+
+void output5(float x, float y, char *string)
+{
+    int len, i;
+    selectFont(0);
     glRasterPos2f(x, y);
     len = (int) strlen(string);
     for (i = 0; i < len; i++)
@@ -79,16 +115,17 @@ static void assign_coord(float y[])
 }
 
 static void terrain_polygon(float x[],float y[])
-{/*
- glColor3d(0,0,1);
-        glBegin(GL_POLYGON);
-        glVertex2f(1,1);
-        glVertex2f(1,-1);
-        glVertex2f(-1,-1);
-        glVertex2f(-1,1);
-        glEnd();
-        glutSwapBuffers();
-            glFlush();*/
+{
+    /*
+    glColor3d(0,0,1);
+           glBegin(GL_POLYGON);
+           glVertex2f(1,1);
+           glVertex2f(1,-1);
+           glVertex2f(-1,-1);
+           glVertex2f(-1,1);
+           glEnd();
+           glutSwapBuffers();
+               glFlush();*/
 
 
     for(int i=0; i<=19; i++)
@@ -141,7 +178,11 @@ static void terrain_polygon(float x[],float y[])
     glEnd();
     glColor3d(1,0,0);
     output(-.045, -.97, "FIRE");
-    output2(-.0.8, .8, "PLAYER 1");
+    glColor3d(1,1,1);
+    output2(-.9, .8, "PLAYER 1");
+    output3(.8, .8, "PLAYER 2");
+
+
 
     glutSwapBuffers();
     glFlush();
